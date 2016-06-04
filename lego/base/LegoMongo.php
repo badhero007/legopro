@@ -10,7 +10,6 @@ namespace lego\base;
 
 
 use common\core\Llog;
-use louli\base\Lobject;
 
 class Legomongo extends Lobject {
     //-覆盖-单例模式Start
