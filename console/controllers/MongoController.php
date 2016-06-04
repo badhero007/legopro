@@ -8,7 +8,7 @@
 namespace console\controllers;
 
 use common\core\Llog;
-use lego\base\Legomongo;
+use lego\base\LegoMongo;
 use yii\console\Controller;
 
 class MongoController extends Controller {
