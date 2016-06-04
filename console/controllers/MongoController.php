@@ -8,12 +8,12 @@
 namespace console\controllers;
 
 use common\core\Llog;
-use lego\base\LegoMongo;
+use lego\base\Legomongo;
 use yii\console\Controller;
 
 class MongoController extends Controller {
     public function actionMongotest(){
-        $m = LegoMongo::getInstance();
+        $m = Legomongo::getInstance();
         $db = $m->selectDB('dianping');
         $collection = $db->selectCollection('shops');
         $cursor=$collection->find()->limit(10);
