@@ -1,5 +1,5 @@
 <?php
-namespace louli\base;
+namespace lego\base;
 class Lobject
 {
     public static function className()

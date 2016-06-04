@@ -13,7 +13,7 @@ use yii\console\Controller;
 
 class MongoController extends Controller {
     public function actionMongotest(){
-        $m = Legomongo::getInstance();
+        $m = LegoMongo::getInstance();
         $db = $m->selectDB('dianping');
         $collection = $db->selectCollection('shops');
         $cursor=$collection->find()->limit(10);
