@@ -26,8 +26,7 @@ class SiteController extends Controller
      */
     public function behaviors()
     {
-        return [
-            
+        return [            
 		'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['logout', 'signup'],
