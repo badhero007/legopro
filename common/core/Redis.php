@@ -25,7 +25,7 @@ class Redis
             self::$instance[$config] = RedisBase::getInstance();
             return self::$instance[$config];
         }
-
+        echo 1111;exit();
         self::$instance[$config] = RedisBase::getInstance($config);
         return self::$instance[$config];
 
@@ -35,7 +35,7 @@ class Redis
         $timeOut = 2; //超时时间  N second(s)
 
         $redis = new \Redis();
-        echo 1111;exit();
+
         if ($redis->connect($host, $port, $timeOut)) {
             if($redis->auth($auth)) {
                 $redis->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_PHP);
