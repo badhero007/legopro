@@ -34,7 +34,7 @@ return [
             'port' => 6379,
             'timeout' => 3,
             'db' => 1,
-//            'pass' => 'louliREDIS!@#'
+            'pass' => '021271'
         ],
     ],
 ];
