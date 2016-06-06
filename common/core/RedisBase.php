@@ -18,6 +18,7 @@ class RedisBase
                 $redis->auth($configInfo['pass']);
             }
             $redis->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_PHP);
+            var_dump($dbIndex);exit();
             $redis->select($dbIndex);
             self::$conn[$configName] = $redis;
         } else if ($defaultRedis = self::getInstance('common')) {
