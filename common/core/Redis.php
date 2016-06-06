@@ -22,10 +22,11 @@ class Redis
         }
 
         if(defined("YII_DEBUG") && YII_DEBUG) { //非生产环境不使用ali kv store
+            echo 1111;exit();
             self::$instance[$config] = RedisBase::getInstance();
             return self::$instance[$config];
         }
-        echo 1111;exit();
+
         self::$instance[$config] = RedisBase::getInstance($config);
         return self::$instance[$config];
 
