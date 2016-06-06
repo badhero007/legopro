@@ -27,7 +27,7 @@ return [
             'port' => 6379,
             'timeout' => 3,
             'db' => 0,
-//            'pass' => 'louliREDIS!@#'
+            'pass' => '021271'
         ],
         'list' => [
             'ip' => '127.0.0.1',
