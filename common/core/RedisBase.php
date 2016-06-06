@@ -7,6 +7,9 @@ class RedisBase
 
     function __construct($configName, $configInfo)
     {
+        var_dump($configName);
+        var_dump($configInfo);
+        exit();
         if(isset(self::$conn[$configName]) && self::$conn[$configName]) {
             return self::$conn[$configName];
         }
@@ -18,7 +21,6 @@ class RedisBase
                 $redis->auth($configInfo['pass']);
             }
             $redis->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_PHP);
-//            var_dump($dbIndex);exit();
             $redis->select($dbIndex);
             self::$conn[$configName] = $redis;
         } else if ($defaultRedis = self::getInstance('common')) {
