@@ -31,17 +31,17 @@ class Redis
 
         $host = '127.0.0.1';
         $port = 6379;
-//        $auth = '412c55b0c79711e4:REDISlouli2015';
+        $auth = '021271';
         $timeOut = 2; //超时时间  N second(s)
 
         $redis = new \Redis();
         if ($redis->connect($host, $port, $timeOut)) {
-//            if($redis->auth($auth)) {
+            if($redis->auth($auth)) {
                 $redis->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_PHP);
                 self::$instance[$config] = $redis;
-//            } else {
-//                throw new \Exception("Jedis Auth Failed");
-//            }
+            } else {
+                throw new \Exception("Jedis Auth Failed");
+            }
         } else {
             throw new \Exception("Jedis Connect Failed");
         }
