@@ -141,7 +141,7 @@ class MongoController extends Controller {
             ],
             'small_cate_id' => 'g135'
         ];
-        $shops = $collection->find($param)->limit(100);
+        $shops = $collection->find($param)->limit(10);
 
 
         $nearshops = [];
