@@ -19,5 +19,12 @@ return [
             'password' => '021271',
             'charset' => 'utf8',
         ],
+        'base'=>[
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=127.0.0.1;dbname=base',
+            'username' => 'lego',
+            'password' => '021271',
+            'charset' => 'utf8',
+        ],
     ],
 ];

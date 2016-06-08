@@ -7,7 +7,11 @@
  */
 namespace console\controllers;
 
+use common\core\Helper;
 use common\core\Llog;
+use common\models\dianping\BigCate;
+use common\models\dianping\DianpingBeijing;
+use common\models\dianping\SmallCate;
 use lego\base\LegoMongo;
 use yii\console\Controller;
 
@@ -62,7 +66,7 @@ class MongoController extends Controller {
             $count = 1;
             $limit = 3000;
 
-            $m = JMongo::getInstance();
+            $m = LegoMongo::getInstance();
             $db = $m->selectDB('dianping');
             $collection = $db->selectCollection('shops');
 
@@ -99,23 +103,28 @@ class MongoController extends Controller {
     }
 
     public function actionCreateindex(){
-        $m = JMongo::getInstance();
+        $m = LegoMongo::getInstance();
         $db = $m->selectDB('dianping');
         $collection = $db->selectCollection('shops');
         $collection->ensureIndex(["position"=>"2dsphere"]);
     }
 
     public function actionShoplist(){
-        $m = JMongo::getInstance();
+        $m = LegoMongo::getInstance();
         $db = $m->selectDB('dianping');
         $collection = $db->selectCollection('shops');
         $cid = 10304;
-        $community = \louli\modlib\BaseCommunityLib::getInstance()->getById($cid);
+        $community = \common\models\base\BaseCommunity::findOne($cid);
+        if(!$community) {
+            exit('community is not found');
+        }
         $longitude = $community['longitude'];
         $latitude = $community['latitude'];
 
         //百度坐标转换为GCJ-02坐标
-        $gcj = Helper::baiduToGCJ($latitude,$longitude);
+        $helper = Helper::getInstance();
+
+        $gcj = $helper->baiduToGCJ($latitude,$longitude);
         $param = [
             'position' => [
                 '$nearSphere' => [
@@ -137,10 +146,10 @@ class MongoController extends Controller {
 
         $nearshops = [];
         foreach ($shops as $id => $value) {
-            $vgcj = Helper::baiduToGCJ($value['latitude'],$value['longitude']);
-            $value['distance'] = Helper::getDistance($gcj['lng'],$gcj['lat'],$vgcj['lng'],$vgcj['lat'],1,2);
+            $vgcj = $helper->baiduToGCJ($value['latitude'],$value['longitude']);
+            $value['distance'] = $helper->getDistance($gcj['lng'],$gcj['lat'],$vgcj['lng'],$vgcj['lat'],1,2);
             $nearshops[]=$value;
         }
-        print_r(Helper::newArraySort($nearshops,'distance','SORT_ASC'));
+        print_r($helper->arraySort($nearshops,'distance','SORT_ASC'));
     }
 } 
