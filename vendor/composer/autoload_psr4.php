@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'yii\\swiftmailer\\' => array($vendorDir . '/yiisoft/yii2-swiftmailer'),
+    'Psr\\Log\\' => array($vendorDir . '/lext/Psr/Log'),
+    'shakura\\yii2\\gearman\\' => array($vendorDir . '/yii2gearman'),
     'yii\\gii\\' => array($vendorDir . '/yiisoft/yii2-gii'),
     'yii\\faker\\' => array($vendorDir . '/yiisoft/yii2-faker'),
     'yii\\debug\\' => array($vendorDir . '/yiisoft/yii2-debug'),

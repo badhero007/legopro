@@ -44,5 +44,12 @@ return [
                 //... other test jobs
             ],
         ],
+
+    ],
+    'controllerMap' => [
+        'gearman' => [
+            'class' => 'shakura\yii2\gearman\GearmanController',
+            'gearmanComponent' => 'gearman'
+        ],
     ],
 ];

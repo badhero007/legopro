@@ -5,6 +5,8 @@
  * Date: 16/6/10
  * Time: 16:30
  */
+namespace lego\job\handler;
+
 use shakura\yii2\gearman\JobBase;
 
 class GearmanTest extends JobBase {
@@ -12,6 +14,6 @@ class GearmanTest extends JobBase {
         $loader = $this->getWorkload($job);
         $params = $loader->getParams();
 
-        var_dump($params);exit();
+        var_dump($params);
     }
 } 

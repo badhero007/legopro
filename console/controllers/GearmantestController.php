@@ -12,7 +12,7 @@ namespace console\controllers;
 use lego\job\BaseJobHanlder;
 use yii\console\Controller;
 
-class GearmanController extends Controller {
+class GearmantestController extends Controller {
     public function actionTest(){
         $jobHandler = new BaseJobHanlder();
         $jobParams = [
