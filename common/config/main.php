@@ -26,5 +26,20 @@ return [
             'password' => '021271',
             'charset' => 'utf8',
         ],
+
+        'gearman' => [
+            'class' => 'shakura\yii2\gearman\GearmanComponent',
+            'servers' => [
+                'main'=>['host' => '127.0.0.1', 'port' => 4730],
+                'slave'=>['host' => '', 'port' => 0],
+            ],
+            'user' => 'root', //测试线配置
+            'jobs' => [
+                'GearmanTest' => [
+                    'class' => 'lego\job\handler\GearmanTest'
+                ],
+                //... other test jobs
+            ],
+        ],
     ],
 ];
