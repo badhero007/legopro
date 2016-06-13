@@ -36,7 +36,7 @@ return [
                 'main'=>['host' => '127.0.0.1', 'port' => 4730],
                 'slave'=>['host' => '', 'port' => 0],
             ],
-            'user' => 'root', //测试线配置
+            'user' => 'legolas', //测试线配置
             'jobs' => [
                 'GearmanTest' => [
                     'class' => 'lego\job\handler\GearmanTest'
@@ -52,4 +52,10 @@ return [
             'gearmanComponent' => 'gearman'
         ],
     ],
+
+        'modules' => [
+            'test' => [
+                'class' => 'backend\modules\test\Module',
+            ],
+        ],
 ];

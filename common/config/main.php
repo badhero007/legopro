@@ -49,4 +49,9 @@ return [
             'gearmanComponent' => 'gearman'
         ],
     ],
+    'modules' => [
+        'test' => [
+            'class' => 'backend\modules\test\Module',
+        ],
+    ],
 ];
