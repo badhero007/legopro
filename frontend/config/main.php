@@ -36,32 +36,6 @@ return [
     'aliases' => [
         '@mdm/admin' => '..\..\vendor\yii2-admin',
     ],
-    'modules' => [
-        'test' => [
-            'class' => 'frontend\modules\test',
-        ],
-        'admin' => [
-            'class' => 'mdm\admin\Module',
-
-            'layout' => 'left-menu', // it can be '@path/to/your/layout'.
-
-            /**/
-            'controllerMap' => [
-                'assignment' => [
-                    'class' => 'mdm\admin\controllers\AssignmentController',
-                    'userClassName' => 'app\models\User',
-                    'idField' => 'id'
-                ]
-            ],
-            'menus' => [
-                'assignment' => [
-                    'label' => 'Grand Access' // change label
-                ],
-                //'route' => null, // disable menu route
-            ]
-        ],
-    ],
-
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
