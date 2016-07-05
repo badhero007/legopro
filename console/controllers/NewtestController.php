@@ -21,7 +21,7 @@ class NewtestController extends Controller {
         $path = \Yii::$app->getBasePath().'/../';
         $imgname = $path.'/frontend/web/img/1.jpg';
         $im = @\imagecreatefromjpeg($imgname);
-        var_dump($im);exit();
+        //var_dump($im);exit();
         Helper::resizeImage($im,329,452,$path.'/frontend/web/img/th_1','jpg');
     }
 } 
