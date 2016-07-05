@@ -22,6 +22,6 @@ class NewtestController extends Controller {
         $imgname = $path.'/frontend/web/img/1.jpg';
         $im = @\imagecreatefromjpeg($imgname);
         //var_dump($im);exit();
-        Helper::resizeImage($im,329,452,$path.'/frontend/web/img/th_1','jpg');
+        Helper::resizeImage($im,329,452,$path.'/frontend/web/img/th_1','.jpg');
     }
 } 
