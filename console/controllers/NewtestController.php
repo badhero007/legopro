@@ -20,7 +20,7 @@ class NewtestController extends Controller {
     public function actionHandleimg(){
         $path = \Yii::$app->getBasePath().'/../';
         $imgname = $path.'/frontend/web/img/14667387000007.jpg';
-        $im = @\imagecreatefrompng($imgname);
+        $im = @\imagecreatefromjpeg($imgname);
         //var_dump($im);exit();
         Helper::resizeImage($im,329,452,$path.'/frontend/web/img/th_14667387000007','.jpg');
     }
