@@ -10,8 +10,9 @@ namespace console\controllers;
 
 
 use common\core\Helper;
+use yii\console\Controller;
 
-class TestController {
+class TestController extends Controller {
     public function actionHandleimg(){
         $path = \Yii::$app->getBasePath().'/../';
         $imgname = $path.'/frontend/web/img/1.jpg';
