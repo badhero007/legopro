@@ -9,6 +9,7 @@
 namespace console\controllers;
 
 
+use common\models\dianping\DianpingBeijing;
 use lego\job\BaseJobHanlder;
 use yii\console\Controller;
 
@@ -23,4 +24,12 @@ class GearmantestController extends Controller {
 
         $jobHandler->background('GearmanTest',$jobParams);
     }
+
+    public function actionDianping(){
+        $i = 0;
+
+        DianpingBeijing::find()->where('phone <> “无”')->limit(1)->offset($i)->one();
+    }
+
+
 } 

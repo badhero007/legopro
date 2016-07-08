@@ -42,6 +42,7 @@ return [
             'admin/*',
             'debug/*',
             'site/*',// add or remove allowed actions to this list
+            'newtest/*'
         ]
     ]
 ];
