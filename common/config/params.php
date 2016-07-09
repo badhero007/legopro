@@ -1,7 +1,7 @@
 <?php
 return [
     'adminEmail' => 'admin@example.com',
-    'supportEmail' => 'support@example.com',
+    'supportEmail' => 'm15201218196@163.com',
     'user.passwordResetTokenExpire' => 3600,
     'mongodb' => [
         'common' => [

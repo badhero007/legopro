@@ -1,5 +1,6 @@
 <?php
 return [
+    'supportEmail' => 'm15201218196@163.com',
     //---------------
     'redisConfig' => [ //redis 服务器连接参数配置  //正式线偶数，测试线基数
         'common' => [
