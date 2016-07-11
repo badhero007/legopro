@@ -11,6 +11,15 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'aliases' => [
+        '@mdm/admin' => '..\..\vendor\yii2-admin',
+    ],
+    'modules' => [
+        'admin' => [
+            'class' => 'mdm\admin\Module',
+            'layout' => 'left-menu',
+        ]
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
@@ -33,9 +42,6 @@ return [
         ],
     ],
     'params' => $params,
-    'aliases' => [
-        '@mdm/admin' => '..\..\vendor\yii2-admin',
-    ],
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [

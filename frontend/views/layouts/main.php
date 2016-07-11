@@ -49,8 +49,8 @@ AppAsset::register($this);
                 ];
             }
             echo Nav::widget([
-//                'options' => ['class' => 'navbar-nav navbar-right'],
-//                'items' => $menuItems,
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => $menuItems,
                 'options' => ['class' => 'navbar-nav navbar-right nav-pills '],
                 #修改使用yii2-admin的菜单控制项
                 'items' => MenuHelper::getAssignedMenu(Yii::$app->user->id),
