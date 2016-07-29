@@ -12,7 +12,12 @@ namespace console\controllers;
 use yii\console\Controller;
 
 class SeaslogController extends Controller {
+
     public function actionSeaslogtest(){
+
+        $basePath_1 = \SeasLog::getBasePath();
+
+        var_dump($basePath_1);exit();
 
         \SeasLog::log(SEASLOG_ERROR,'this is a error test by ::log');
 
