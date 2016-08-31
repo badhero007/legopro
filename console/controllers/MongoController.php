@@ -63,21 +63,20 @@ class MongoController extends Controller {
     public function actionDianpingdata(){
         try{
             $i = 0;
-            $count = 1;
+            $shops = true;
             $limit = 3000;
 
             $m = LegoMongo::getInstance();
             $db = $m->selectDB('dianping');
             $collection = $db->selectCollection('shops');
 
-            while($count > 0){
+            while($shops){
                 $condition = 'is_closed=0 and latitude is not null and longitude is not null';
 
                 $query = DianpingBeijing::find();
                 $query->where($condition)->asArray();
                 $query->limit($limit)->offset($i*$limit);
                 Llog::log($query->createCommand()->rawSql,'mongo/insertdata');
-                $count = $query->count();
                 $shops = $query->all();
                 $i++;
                 $rows = [];
@@ -141,7 +140,7 @@ class MongoController extends Controller {
             ],
             'small_cate_id' => 'g135'
         ];
-        $shops = $collection->find($param)->limit(10);
+        $shops = $collection->find($param)->limit(50);
 
 
         $nearshops = [];
