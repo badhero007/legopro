@@ -22,7 +22,7 @@ class AppAsset extends AssetBundle
     ];
 
     public $js = [
-        'js/jquery-2.0.3.min.js',
+        'js/chat.js'
     ];
 
     public $jsOptions = [

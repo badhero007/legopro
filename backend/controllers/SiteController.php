@@ -12,6 +12,7 @@ use yii\filters\VerbFilter;
  */
 class SiteController extends Controller
 {
+    public $layout = '@app/views/layouts/adminex.php';
     /**
      * @inheritdoc
      */

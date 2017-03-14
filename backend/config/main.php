@@ -49,9 +49,11 @@ return [
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
-            'admin/*',
-            'debug/*',
-            'site/*',// add or remove allowed actions to this list
+                '*'
+//            'admin/*',
+//            'debug/*',
+//            'default/*',
+//            'site/*',// add or remove allowed actions to this list
         ]
     ]
 ];

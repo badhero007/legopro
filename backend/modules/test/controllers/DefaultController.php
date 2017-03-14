@@ -3,6 +3,7 @@
 namespace backend\modules\test\controllers;
 
 use lego\extend\GeetestLib;
+use yii\helpers\Json;
 use yii\web\Controller;
 
 class DefaultController extends Controller
@@ -46,5 +47,18 @@ class DefaultController extends Controller
                 echo "no";
             }
         }
+    }
+
+    public function actionBdmap(){
+        return $this->render('bdmap');
+    }
+
+    public function actionGetplaces(){
+        $data = [
+            ['long'=>116.567646,'lat'=>39.853166,'name'=>'富力又一城','point'=>10],
+            ['long'=>116.549873,'lat'=>39.968263,'name'=>'奥利匹克花园','point'=>4],
+        ];
+
+        echo Json::encode($data);
     }
 }
