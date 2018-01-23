@@ -1,21 +1,49 @@
 <?php
+$params = array_merge(
+    require(__DIR__ . '/../../common/config/params.php'),
+    require(__DIR__ . '/../../common/config/params-local.php'),
+    require(__DIR__ . '/params.php'),
+    require(__DIR__ . '/params-local.php')
+);
 
-$config = [
+return [
+    'id' => 'app-frontend',
+    'basePath' => dirname(__DIR__),
+    'bootstrap' => ['log'],
+    'controllerNamespace' => 'frontend\controllers',
+    'aliases' => [
+        '@mdm/admin' => '..\..\vendor\yii2-admin',
+    ],
+    'modules' => [],
     'components' => [
-        'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'l_6e11JpSa8ww6cEjeybz3_nJ3P0JjCP',
+        'user' => [
+            'identityClass' => 'common\models\User',
+            'enableAutoLogin' => true,
+        ],
+        'log' => [
+            'traceLevel' => YII_DEBUG ? 3 : 0,
+            'targets' => [
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning'],
+                ],
+            ],
+        ],
+        'errorHandler' => [
+            'errorAction' => 'site/error',
+        ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\DbManager'
         ],
     ],
+    'params' => $params,
+    'as access' => [
+        'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            'admin/*',
+            'debug/*',
+            'site/*',// add or remove allowed actions to this list
+            'newtest/*'
+        ]
+    ]
 ];
-
-if (!YII_ENV_TEST) {
-    // configuration adjustments for 'dev' environment
-    $config['bootstrap'][] = 'debug';
-    $config['modules']['debug'] = 'yii\debug\Module';
-
-    $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = 'yii\gii\Module';
-}
-
-return $config;

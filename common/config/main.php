@@ -1,9 +1,6 @@
 <?php
-if(defined('YII_DEBUG') && YII_DEBUG) {
-    $gearmanConfig = require(__DIR__ . '/gearman.php');
-} else {
-    $gearmanConfig = require(__DIR__ . '/gearman.php');
-}
+$gearmanConfig = require(__DIR__ . '/gearman.php');
+
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [

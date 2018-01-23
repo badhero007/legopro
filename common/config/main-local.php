@@ -1,28 +1,22 @@
 <?php
+$gearmanConfig = require(__DIR__ . '/gearman.php');
 
 return [
+    'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
+        'cache' => [
+            'class' => 'yii\caching\FileCache',
+        ],
         'db' => [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=127.0.0.1;dbname=mydb',
             'username' => 'root',
-            'password' => '0212719!',
+            'password' => '021271',
             'charset' => 'utf8',
         ],
-        'dianping' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=127.0.0.1;dbname=bakdianping',
-            'username' => 'root',
-            'password' => '0212719!',
-            'charset' => 'utf8',
-        ],
-        'base'=>[
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=127.0.0.1;dbname=base',
-            'username' => 'root',
-            'password' => '0212719!',
-            'charset' => 'utf8',
-        ],
+
+        'gearman' => $gearmanConfig,
+
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
@@ -37,9 +31,9 @@ return [
                 'password' => '021271asd',
                 'port' => '465',
                 'encryption' => 'ssl', //tls or ssl
+
             ],
         ],
-        'gearman' => $gearmanConfig,
         'urlManager' => array(
             'enablePrettyUrl' => true,
             'showScriptName' => false, //隐藏index.php
@@ -52,10 +46,10 @@ return [
             'gearmanComponent' => 'gearman'
         ],
     ],
-
     'modules' => [
         'test' => [
             'class' => 'backend\modules\test\Module',
         ],
     ],
+
 ];
