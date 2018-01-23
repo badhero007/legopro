@@ -1,4 +1,5 @@
 <?php
+var_dump(get_cfg_var('env.name'));exit();
 if(get_cfg_var('env.name') == 'online'){
     defined('YII_DEBUG') or define('YII_DEBUG', false);
     defined('YII_ENV') or define('YII_ENV', 'prod');
