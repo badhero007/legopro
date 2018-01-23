@@ -15,21 +15,21 @@ return [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=127.0.0.1;dbname=mydb',
             'username' => 'root',
-            'password' => '0212719!',
+            'password' => '021271',
             'charset' => 'utf8',
         ],
         'dianping' => [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=127.0.0.1;dbname=bakdianping',
             'username' => 'root',
-            'password' => '0212719!',
+            'password' => '021271',
             'charset' => 'utf8',
         ],
         'base'=>[
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=127.0.0.1;dbname=base',
             'username' => 'root',
-            'password' => '0212719!',
+            'password' => '021271',
             'charset' => 'utf8',
         ],
 
@@ -64,10 +64,6 @@ return [
             'gearmanComponent' => 'gearman'
         ],
     ],
-    'modules' => [
-        'test' => [
-            'class' => 'backend\modules\test\Module',
-        ],
-    ],
+
 
 ];

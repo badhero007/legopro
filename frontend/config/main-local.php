@@ -14,7 +14,11 @@ return [
     'aliases' => [
         '@mdm/admin' => '..\..\vendor\yii2-admin',
     ],
-    'modules' => [],
+    'modules' => [
+        'test' => [
+            'class' => 'frontend\modules\test\Module',
+        ],
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
@@ -37,13 +41,14 @@ return [
         ],
     ],
     'params' => $params,
-    'as access' => [
-        'class' => 'mdm\admin\components\AccessControl',
-        'allowActions' => [
-            'admin/*',
-            'debug/*',
-            'site/*',// add or remove allowed actions to this list
-            'newtest/*'
-        ]
-    ]
+//    'as access' => [
+//        'class' => 'mdm\admin\components\AccessControl',
+//        'allowActions' => [
+//            'admin/*',
+//            'debug/*',
+//            'site/*',// add or remove allowed actions to this list
+//            'newtest/*',
+//            'test/*'
+//        ],
+//    ]
 ];

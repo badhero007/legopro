@@ -25,4 +25,8 @@ class NewtestController extends Controller {
             return $this->render('gif');
         }
     }
+
+    public function actionTest(){
+        
+    }
 } 
