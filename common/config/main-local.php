@@ -41,7 +41,7 @@ return [
         ],
         'gearman' => $gearmanConfig,
         'urlManager' => array(
-            'urlFormat' => 'path',
+            'enablePrettyUrl' => true,
             'showScriptName' => false, //隐藏index.php
             'rules' => array(),
         ),
