@@ -40,6 +40,11 @@ return [
             ],
         ],
         'gearman' => $gearmanConfig,
+        'urlManager' => array(
+            'urlFormat' => 'path',
+            'showScriptName' => false, //隐藏index.php
+            'rules' => array(),
+        ),
     ],
     'controllerMap' => [
         'gearman' => [

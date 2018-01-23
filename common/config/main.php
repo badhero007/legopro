@@ -51,6 +51,11 @@ return [
 
             ],
         ],
+        'urlManager' => array(
+            'urlFormat' => 'path',
+            'showScriptName' => false, //隐藏index.php
+            'rules' => array(),
+        ),
     ],
     'controllerMap' => [
         'gearman' => [
@@ -63,9 +68,5 @@ return [
             'class' => 'backend\modules\test\Module',
         ],
     ],
-    'urlManager' => array(
-        'urlFormat' => 'path',
-        'showScriptName' => false, //隐藏index.php
-        'rules' => array(),
-    ),
+
 ];
